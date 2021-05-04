@@ -175,7 +175,11 @@ public class ShowMoreTextView extends TextView {
 
     private void showLessButton() {
 
-        String text = getText() + dotdot + showLess;
+        String text = getText().toString();
+        if (!getText().toString().endsWith(dotdot + showLess)) {
+            text = getText() + dotdot + showLess;
+        }
+        
         SpannableString spannableString = new SpannableString(text);
 
         spannableString.setSpan(new ClickableSpan() {

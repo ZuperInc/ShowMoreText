@@ -1,4 +1,4 @@
-[![Release](https://jitpack.io/v/mahimrocky/ShowMoreText.svg)](https://github.com/mahimrocky/ShowMoreText/releases/tag/1.0.2)
+[![Release](https://jitpack.io/v/EmployeeNetwork/ShowMoreText.svg)](https://github.com/EmployeeNetwork/ShowMoreText/releases/tag/1.0.2)
 
 # ShowMoreText
 
@@ -6,8 +6,8 @@ This is simple library for creating textview expandable. Like **Continue or Less
 
 Sample
 <p align="center">
-  <img src="https://github.com/mahimrocky/ShowMoreText/blob/master/screenshot1.png" width="200" height="400" />
-  <img src="https://github.com/mahimrocky/ShowMoreText/blob/master/screenshot2.png" width="200" height="400" /> 
+  <img src="https://github.com/EmployeeNetwork/ShowMoreText/blob/master/screenshot1.png" width="200" height="400" />
+  <img src="https://github.com/EmployeeNetwork/ShowMoreText/blob/master/screenshot2.png" width="200" height="400" />
 </p>
 
 
@@ -25,7 +25,7 @@ Sample
 
 ```sh
 dependencies {
-	   implementation 'com.github.mahimrocky:ShowMoreText:1.0.2'
+	   implementation 'com.github.EmployeeNetwork:ShowMoreText:1.0.2'
 	}
 ```
 You have to use just this xml. You can modify or set color your own textView. **But don`t need to use maxLength or maxLine in text view. It may be confilict with library**.
