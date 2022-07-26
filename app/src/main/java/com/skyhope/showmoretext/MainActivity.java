@@ -1,8 +1,7 @@
 package com.skyhope.showmoretext;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.skyhope.showmoretextview.ShowMoreTextView;
 
@@ -24,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
 
         textView.addShowMoreText("Continue");
         textView.addShowLessText("Less");
+
+        textView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                textView.setText("This is a very long note. This is a very long note. This is a very long note. This is a very long note. This is a very long note. This is a very long note.  blah blah blah");
+                textView.setShowingLine(2);
+            }
+        }, 3000);
 
 
     }
