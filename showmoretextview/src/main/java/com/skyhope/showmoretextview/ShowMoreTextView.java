@@ -3,7 +3,7 @@ package com.skyhope.showmoretextview;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextPaint;
@@ -83,7 +83,7 @@ public class ShowMoreTextView extends TextView {
             @Override
             public void onGlobalLayout() {
                 String text = getText().toString();
-                if (!isAlreadySet) {
+                if (!text.equals(mainText)) {
                     mainText = getText().toString();
                     isAlreadySet = true;
                 }
@@ -102,9 +102,8 @@ public class ShowMoreTextView extends TextView {
                     SaveState.isCollapse = true;
 
                     setText(newText);
-                    Log.d(TAG, "Text: " + newText);
+//                    Log.d(TAG, "Text (chars): " + newText);
                 } else {
-
                     if (showingLine >= getLineCount()) {
                         try {
                             throw new Exception("Line Number cannot be exceed total line count");
@@ -124,8 +123,8 @@ public class ShowMoreTextView extends TextView {
                     }
 
                     String newText = showingText.substring(0, showingText.length() - (dotdot.length() + showMore.length() + MAGIC_NUMBER));
-                    Log.d(TAG, "Text: " + newText);
-                    Log.d(TAG, "Text: " + showingText);
+//                    Log.d(TAG, "Text (lines - new text): " + newText);
+//                    Log.d(TAG, "Text (lines - showing text): " + showingText);
                     newText += dotdot + showMore;
 
                     SaveState.isCollapse = true;
@@ -145,7 +144,7 @@ public class ShowMoreTextView extends TextView {
     private void setShowMoreColoringAndClickable() {
         final SpannableString spannableString = new SpannableString(getText());
 
-        Log.d(TAG, "Text: " + getText());
+//        Log.d(TAG, "Text: setShowMoreColoringAndClickable" + getText());
         spannableString.setSpan(new ClickableSpan() {
                                     @Override
                                     public void updateDrawState(TextPaint ds) {
@@ -158,7 +157,7 @@ public class ShowMoreTextView extends TextView {
                                         setText(mainText);
                                         SaveState.isCollapse = false;
                                         showLessButton();
-                                        Log.d(TAG, "Item clicked: " + mainText);
+//                                        Log.d(TAG, "Item clicked: " + mainText);
 
                                     }
                                 },
@@ -179,7 +178,7 @@ public class ShowMoreTextView extends TextView {
         if (!getText().toString().endsWith(dotdot + showLess)) {
             text = getText() + dotdot + showLess;
         }
-        
+
         SpannableString spannableString = new SpannableString(text);
 
         spannableString.setSpan(new ClickableSpan() {
@@ -195,7 +194,7 @@ public class ShowMoreTextView extends TextView {
 
                                         addShowMore();
 
-                                        Log.d(TAG, "Item clicked: ");
+//                                        Log.d(TAG, "Item clicked: ");
 
                                     }
                                 },
